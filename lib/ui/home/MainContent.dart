@@ -20,7 +20,15 @@ class _MainContentState extends State<MainContent> {
       appBar: AppBar(title: const Text("就是TMD秀")),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [Text("叫声爸爸你敢答应吗")],
+        children: [
+          const Text("叫声爸爸你敢答应吗"),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+            ),
+            onPressed: () { _onTap(0); },
+            child: const Text('Hello'),
+          )],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [

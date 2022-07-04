@@ -1,4 +1,4 @@
-import 'package:andromeda_flutter/ui/home/HomeContent.dart';
+import 'package:andromeda_flutter/ui/home/MainContent.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget{

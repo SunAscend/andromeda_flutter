@@ -1,8 +1,35 @@
-import 'package:andromeda_flutter/ui/home/HomePage.dart';
+import 'package:andromeda_flutter/ui/home/AnimPage.dart';
+import 'package:andromeda_flutter/ui/home/MainPage.dart';
+import 'package:andromeda_flutter/ui/home/PainterPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainPage());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    routes: <String,WidgetBuilder>{
+      '/a': (BuildContext context) => const MainPage(),
+      '/b':(BuildContext context) => const AnimaPage(),
+      '/c':(BuildContext context) => const PainterPage()
+    },
+
+    home: MyMain(),
+  ));
+}
+
+class MyMain extends StatelessWidget{
+  const MyMain({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: const Text("垃圾")),
+    body: Column(
+      children: [
+        ElevatedButton(onPressed: (){Navigator.of(context).pushNamed("/a");}, child: const Text("Main")),
+        ElevatedButton(onPressed: (){Navigator.of(context).pushNamed("/b");}, child: const Text("Anim")),
+        ElevatedButton(onPressed: (){Navigator.of(context).pushNamed("/c");}, child: const Text("Paint")),
+      ],
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
